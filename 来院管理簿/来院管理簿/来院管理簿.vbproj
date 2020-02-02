@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{039248DF-ED3F-4F2C-A1EF-E38676844857}</ProjectGuid>
+    <ProjectGuid>{CCC28FAF-8CB6-4BB5-B882-CD0667A6CC8D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Trail_Creation.My.MyApplication</StartupObject>
-    <RootNamespace>Trail_Creation</RootNamespace>
-    <AssemblyName>Trail_Creation</AssemblyName>
+    <StartupObject>来院管理簿.My.MyApplication</StartupObject>
+    <RootNamespace>来院管理簿</RootNamespace>
+    <AssemblyName>来院管理簿</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Trail_Creation.xml</DocumentationFile>
+    <DocumentationFile>来院管理簿.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Trail_Creation.xml</DocumentationFile>
+    <DocumentationFile>来院管理簿.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -73,13 +73,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="basComn.vb" />
-    <Compile Include="basMain.vb" />
-    <Compile Include="selectForm.vb">
+    <Compile Include="ClientEntryForm.Designer.vb">
+      <DependentUpon>ClientEntryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ClientEntryForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="selectForm.Designer.vb">
-      <DependentUpon>selectForm.vb</DependentUpon>
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -99,8 +103,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="selectForm.resx">
-      <DependentUpon>selectForm.vb</DependentUpon>
+    <EmbeddedResource Include="ClientEntryForm.resx">
+      <DependentUpon>ClientEntryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
