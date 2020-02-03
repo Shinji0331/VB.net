@@ -1,9 +1,34 @@
-﻿Public Class MainForm
-    Private Sub Label3_Click(sender As Object, e As EventArgs) 
+﻿Imports System.Runtime.InteropServices
+Public Class MainForm
 
+
+    Private Sub AbrirFormEnPanel(Of Miform As {Form, New})()
+        Dim Formulario As Form
+        Formulario = PanelFormularios.Controls.OfType(Of Miform)().FirstOrDefault()
+
+        If Formulario Is Nothing Then
+            Formulario = New Miform()
+            Formulario.TopLevel = False
+            Formulario.FormBorderStyle = FormBorderStyle.None
+            Formulario.Dock = DockStyle.Fill
+            PanelFormularios.Controls.Add(Formulario)
+            PanelFormularios.Tag = Formulario
+            Formulario.Show()
+            Formulario.BringToFront()
+        Else
+            Formulario.BringToFront()
+        End If
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+    Private Sub serchBtn_Click(sender As Object, e As EventArgs) Handles serchBtn.Click
+        AbrirFormEnPanel(Of Form1)()
+    End Sub
 
+    Private Sub entryBtn_Click(sender As Object, e As EventArgs) Handles entryBtn.Click
+        AbrirFormEnPanel(Of Form2)()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        AbrirFormEnPanel(Of Form3)()
     End Sub
 End Class
