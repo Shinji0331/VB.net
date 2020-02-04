@@ -1,7 +1,7 @@
 ﻿Imports System.Runtime.InteropServices
 Public Class MainForm
 
-
+#Region "サイドバーボタンの右パネル反映処理"
     Private Sub AbrirFormEnPanel(Of Miform As {Form, New})()
         Dim Formulario As Form
         Formulario = PanelFormularios.Controls.OfType(Of Miform)().FirstOrDefault()
@@ -19,7 +19,9 @@ Public Class MainForm
             Formulario.BringToFront()
         End If
     End Sub
+#End Region
 
+#Region "サイドバーボタン"
     Private Sub serchBtn_Click(sender As Object, e As EventArgs) Handles serchBtn.Click
         AbrirFormEnPanel(Of Form1)()
     End Sub
@@ -31,4 +33,7 @@ Public Class MainForm
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         AbrirFormEnPanel(Of Form3)()
     End Sub
+#End Region
+
+
 End Class
